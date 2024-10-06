@@ -2,23 +2,37 @@
 
 import { Bevan } from "next/font/google";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoChevronDown } from "react-icons/io5";
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import { RiMenuFill } from "react-icons/ri";
 import NavMenu from "@/app/NavMenu";
-import { Transition } from "@headlessui/react";
+import ShoppingCartMenu from "./ShoppingCartMenu";
 
 const bevan = Bevan({ subsets: ["latin"], weight: ["400"] });
 
 const NavBar = () => {
-  // State to manage the chevron toggle
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isCartOpen, setCartOpen] = useState(false);
 
-  // Example cart item count (you can pass this dynamically)
-  const cartItemCount = 5; // Example value
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setIsLargeScreen(window.innerWidth >= 1024); // lg breakpoint
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMenuOpen, isCartOpen]);
+
+  const cartItemCount = 4; // Example value
 
   return (
     <>
@@ -27,7 +41,7 @@ const NavBar = () => {
         <div
           title="Menu"
           className="flex justify-start items-center gap-x-0.5 ml-3 md:ml-5 justify-self-start md:scale-110 hover:cursor-pointer group"
-          onClick={() => setMenuOpen(!isMenuOpen)} // Toggle menu chevron
+          onClick={() => setMenuOpen(!isMenuOpen)}
         >
           <RiMenuFill size={30} />
           <IoChevronDown
@@ -53,7 +67,7 @@ const NavBar = () => {
           <div
             title="Shopping Cart"
             className="relative flex justify-center items-center hover:cursor-pointer group"
-            onClick={() => setCartOpen(!isCartOpen)} // Toggle cart chevron
+            onClick={() => setCartOpen(!isCartOpen)}
           >
             {/* Cart Icon */}
             <LiaShoppingBagSolid size={30} />
@@ -81,8 +95,49 @@ const NavBar = () => {
           />
         </div>
       </div>
-      <div className="mx-3 my-5 lg:w-1/3">
-        {isMenuOpen && <NavMenu />}
+
+      {/* Navigation menu and shopping cart */}
+      <div className="relative">
+        {!isLargeScreen && (
+          <>
+            {isMenuOpen && (
+              <>
+                {isCartOpen && (setCartOpen(false), null)}
+                <div className="absolute w-full bg-white">
+                  <NavMenu />
+                </div>
+              </>
+            )}
+
+            {isCartOpen && (
+              <>
+                {isMenuOpen && (setMenuOpen(false), null)}
+                <div className="absolute w-full bg-white p-3">
+                  <ShoppingCartMenu />
+                </div>
+              </>
+            )}
+          </>
+        )}
+
+        {isLargeScreen && (
+          <div className="relative grid grid-cols-3 w-full">
+            <div className="col-start-1 col-end-1 relative">
+              {isMenuOpen && (
+                <div className="absolute w-full top-0 left-0 z-50 bg-white shadow-lg">
+                  <NavMenu />
+                </div>
+              )}
+            </div>
+            <div className="col-start-3 col-end-3 relative">
+              {isCartOpen && (
+                <div className="absolute w-full top-0 right-0 z-50 bg-white shadow-lg p-2">
+                  <ShoppingCartMenu />
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

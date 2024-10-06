@@ -2,7 +2,7 @@ import { IoIosSearch } from "react-icons/io";
 
 const SearchBox = () => {
   return (
-    <div className="flex justify-between items-center border-2 border-black w-full p-1 transition-shadow focus-within:shadow-lg focus-within:border-slate-500">
+    <div className="flex justify-between items-center border-2 border-black bg-white w-full p-1 transition-shadow focus-within:shadow-lg focus-within:border-slate-500">
       <form action="/submit" className="flex w-full">
         <input
           type="text"

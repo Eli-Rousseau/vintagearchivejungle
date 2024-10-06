@@ -1,7 +1,7 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div></div>
+    <div className="bg-pink-600 w-full h-[2500px]">
+      Hello World
+    </div>
   );
 }

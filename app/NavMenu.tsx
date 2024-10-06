@@ -22,7 +22,7 @@ const NavMenu = () => {
   const [isShopOpen, setShopOpen] = useState(false);
 
   return (
-    <div className="flex flex-col gap-y-5 w-full p-2 lg:max-w-full border-black border-2">
+    <div className="flex flex-col gap-y-5 w-full p-2 lg:max-w-full">
       {/* Top part: search box */}
       <SearchBox />
 
@@ -58,7 +58,7 @@ const NavMenu = () => {
         >
           <div className="flex flex-col gap-y-1 overflow-hidden transition-max-height duration-300 ease-in-out">
             {categories.map((category) => (
-              <Link id={category.label} href={category.link} className="ml-2">
+              <Link key={category.label} href={category.link} className="ml-2">
                 {category.label}
               </Link>
             ))}
