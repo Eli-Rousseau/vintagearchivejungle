@@ -29,14 +29,15 @@
     font-weight: 500;
   }
 
-  .chalet_comprimé {
+  .chalet-comprimé {
     font-family: "Chalet-Comprimé";
   }
 
-  .home-text {
+  .home-background {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    background-size: cover;
  }
 
   .spinner {
@@ -56,6 +57,66 @@
     to {
         transform: rotate(1turn);
     }
+  }
+
+  @media (min-aspect-ratio: 7/10) and (max-aspect-ratio: 9/10) {
+    /* Height and width within range 3/2 and 2/3 */
+    .responsive-visual {
+      @apply w-[80vw] h-[80vw];
+    }
+    .overlapping-paragraph {
+      @apply text-[28vw];
+    }
+  }
+
+  @media (min-aspect-ratio: 9/10) and (max-aspect-ratio: 12/10) {
+      /* Width is 3/2 larger than height */
+      .responsive-visual {
+        @apply w-[80vw] h-[60vw];
+      }
+      .overlapping-paragraph {
+        @apply text-[20vw];
+      }
+  }
+
+  @media (min-aspect-ratio: 12/10) {
+      /* Width is 3/2 larger than height */
+      .responsive-visual {
+        @apply w-[70vw] h-[30vw];
+      }
+      .overlapping-paragraph {
+        @apply text-[10vw];
+      }
+  }
+
+  @media (min-aspect-ratio: 5/10) and (max-aspect-ratio: 7/10) {
+      /* Height is 3/2 larger than width */
+      .responsive-visual {
+        @apply w-[70vw] h-[100vw];
+      }
+      .overlapping-paragraph {
+        @apply text-[35vw];
+      }
+  }
+
+  @media (max-aspect-ratio: 5/10) {
+      /* Height is 3/2 larger than width */
+      .responsive-visual {
+        @apply w-[70vw] h-[140vw];
+      }
+      .overlapping-paragraph {
+        @apply text-[35vw];
+        top: 15%;             /* More overlap for taller containers */
+      }
+  }
+
+  .overlapping-paragraph {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      line-height: 0.9;
+      text-align: center;
+      z-index: 1;
   }
 }
 

@@ -21,22 +21,40 @@ const HomeVisual = () => {
   };
 
   return (
-    <div
-      className="w-full h-full flex gap-y-10 flex-col items-center justify-evenly text-center"
-      onClick={handleMouseClick}
-    >
-      <p
-        className="chalet_comprimé cursor-default text-wrap drop-shadow-2xl home-text text-[32vw] md:text-[26vw] lg:text-[15vw] leading-tight"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-        }}
+    // <div
+    //   className="w-full h-full flex gap-y-10 flex-col items-center justify-evenly text-center"
+    //   onClick={handleMouseClick}
+    // >
+    //   <p
+    //     className="chalet_comprimé cursor-default text-wrap drop-shadow-2xl home-text text-[32vw] md:text-[26vw] lg:text-[15vw] leading-tight"
+    //     style={{
+    //       backgroundImage: `url(${backgroundImage})`,
+    //     }}
+    //   >
+    //     Vintage
+    //     Archive
+    //     Jungle
+    //   </p>
+    //   <Link href={"/"} className="flex items-center">
+    //     <Button text={"Shop Now"} className={"md:text-2xl lg:text-2xl"}/>
+    //   </Link>
+    // </div>
+    <div className="h-full flex flex-col  justify-around items-center relative overflow-hidden">
+      <div
+        className="responsive-paragraph chalet-comprimé cursor-default responsive-visual relative"
+        onClick={handleMouseClick}
       >
-        Vintage
-        Archive
-        Jungle
-      </p>
+        <p
+          className="overlapping-paragraph p-8 home-background"
+          style={{
+            backgroundImage: `url(${backgroundImage})`
+          }}
+        >
+          Vintage Archive Jungle
+        </p>
+      </div>
       <Link href={"/"} className="flex items-center">
-        <Button text={"Shop Now"} className={"md:text-2xl lg:text-2xl"}/>
+        <Button text={"Shop Now"} className={"md:text-2xl lg:text-2xl"} />
       </Link>
     </div>
   );
