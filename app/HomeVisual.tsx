@@ -5,26 +5,14 @@ const backgrounds = [
   "/assets/images/print2.jpeg",
 ];
 
+import Button from "@/components/Button";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const HomeVisual = () => {
-  const [backgroundPosition, setBackgroundPosition] = useState("center");
   const [backgroundImage, setBackgroundImage] = useState(
     backgrounds[Math.floor(Math.random() * backgrounds.length)]
   );
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLParagraphElement>) => {
-    const { left, top, width, height } =
-      e.currentTarget.getBoundingClientRect();
-
-    const x = e.clientX - left;
-    const y = e.clientY - top;
-
-    const xPercent = (x / width) * 100;
-    const yPercent = (y / height) * 100;
-
-    setBackgroundPosition(`${xPercent}% ${yPercent}%`);
-  };
 
   const handleMouseClick = () => {
     setBackgroundImage(
@@ -34,19 +22,22 @@ const HomeVisual = () => {
 
   return (
     <div
-      className="w-full text-center 2xl:w-[1440px]"
+      className="w-full h-full flex gap-y-10 flex-col items-center justify-evenly text-center"
       onClick={handleMouseClick}
     >
       <p
-        className="chalet_comprimé cursor-default text-wrap text-[40vw] 2xl:text-[576px] drop-shadow-2xl home-text leading-extra-tight pb-6 sm:pb-10 md:pb-14 xl:pb-20 2xl:pb-24"
-        onMouseMove={handleMouseMove}
+        className="chalet_comprimé cursor-default text-wrap drop-shadow-2xl home-text text-[32vw] md:text-[26vw] lg:text-[15vw] leading-tight"
         style={{
-          backgroundPosition,
           backgroundImage: `url(${backgroundImage})`,
         }}
       >
-        Vintage Archive Jungle
+        Vintage
+        Archive
+        Jungle
       </p>
+      <Link href={"/"} className="flex items-center">
+        <Button text={"Shop Now"} className={"md:text-2xl lg:text-2xl"}/>
+      </Link>
     </div>
   );
 };

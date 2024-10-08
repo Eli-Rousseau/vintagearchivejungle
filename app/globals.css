@@ -34,11 +34,9 @@
   }
 
   .home-text {
-    background-size: 150%;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    transition: background-position 0.1s ease-out;
  }
 
   .spinner {
