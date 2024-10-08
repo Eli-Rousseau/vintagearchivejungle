@@ -2,10 +2,10 @@
 
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
-import img1 from "@/assets/images/img1.jpg";
-import img2 from "@/assets/images/img2.jpg";
-import img3 from "@/assets/images/img3.jpg";
-import img4 from "@/assets/images/img4.jpg";
+import img1 from "@/public/assets/images/img1.jpg";
+import img2 from "@/public/assets/images/img2.jpg";
+import img3 from "@/public/assets/images/img3.jpg";
+import img4 from "@/public/assets/images/img4.jpg";
 import { IoCloseOutline } from "react-icons/io5";
 import Button from "@/components/Button";
 import Loader from "@/components/Loader";

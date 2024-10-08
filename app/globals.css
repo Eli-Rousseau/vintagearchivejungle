@@ -7,7 +7,14 @@
     font-family: 'Myriad-Apple-Text';
     font-style: normal;
     font-weight: normal;
-    src: url(../assets/fonts/Myriad-Apple-Text.ttf.woff) format('woff2');
+    src: url(../public/assets/fonts/Myriad-Apple-Text.ttf.woff) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Chalet-Comprimé';
+    src: url(../public/assets/fonts/ChaletComprime-CologneSeventy.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
   }
 
   *, 
@@ -21,6 +28,18 @@
     font-family: 'Myriad-Apple-Text';
     font-weight: 500;
   }
+
+  .chalet_comprimé {
+    font-family: "Chalet-Comprimé";
+  }
+
+  .home-text {
+    background-size: 150%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: background-position 0.1s ease-out;
+ }
 
   .spinner {
     width: 24px;

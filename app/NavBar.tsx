@@ -103,7 +103,7 @@ const NavBar = () => {
             {isMenuOpen && (
               <>
                 {isCartOpen && (setCartOpen(false), null)}
-                <div className="absolute w-full bg-white">
+                <div className="absolute w-full bg-white z-50">
                   <NavMenu />
                 </div>
               </>
@@ -112,7 +112,7 @@ const NavBar = () => {
             {isCartOpen && (
               <>
                 {isMenuOpen && (setMenuOpen(false), null)}
-                <div className="absolute w-full bg-white p-3">
+                <div className="absolute w-full bg-white p-3 z-50">
                   <ShoppingCartMenu />
                 </div>
               </>
