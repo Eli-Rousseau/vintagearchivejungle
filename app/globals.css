@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @layer base {
+
+  /* Import custom fonts */
   @font-face {
     font-family: 'Myriad-Apple-Text';
     font-style: normal;
@@ -38,8 +40,9 @@
     -webkit-background-clip: text;
     color: transparent;
     background-size: cover;
- }
+  }
 
+  /* Spinner styles */
   .spinner {
     width: 24px;
     height: 24px;
@@ -59,56 +62,51 @@
     }
   }
 
-  @media (min-aspect-ratio: 7/10) and (max-aspect-ratio: 9/10) {
-    /* Height and width within range 3/2 and 2/3 */
-    .responsive-visual {
-      @apply w-[80vw] h-[80vw];
-    }
-    .overlapping-paragraph {
-      @apply text-[28vw];
-    }
-  }
-
-  @media (min-aspect-ratio: 9/10) and (max-aspect-ratio: 12/10) {
-      /* Width is 3/2 larger than height */
-      .responsive-visual {
-        @apply w-[80vw] h-[60vw];
-      }
-      .overlapping-paragraph {
-        @apply text-[20vw];
-      }
-  }
-
-  @media (min-aspect-ratio: 12/10) {
-      /* Width is 3/2 larger than height */
-      .responsive-visual {
-        @apply w-[70vw] h-[30vw];
-      }
-      .overlapping-paragraph {
-        @apply text-[10vw];
-      }
-  }
-
-  @media (min-aspect-ratio: 5/10) and (max-aspect-ratio: 7/10) {
-      /* Height is 3/2 larger than width */
-      .responsive-visual {
-        @apply w-[70vw] h-[100vw];
-      }
-      .overlapping-paragraph {
-        @apply text-[35vw];
-      }
-  }
-
+  /* Responsive design of the home page visual */
   @media (max-aspect-ratio: 5/10) {
-      /* Height is 3/2 larger than width */
       .responsive-visual {
         @apply w-[70vw] h-[140vw];
       }
       .overlapping-paragraph {
         @apply text-[35vw];
-        top: 15%;             /* More overlap for taller containers */
       }
   }
+
+  @media (min-aspect-ratio: 5/10) and (max-aspect-ratio: 7/10) {
+    .responsive-visual {
+      @apply w-[70vw] h-[100vw];
+    }
+    .overlapping-paragraph {
+      @apply text-[35vw];
+    }
+  }
+
+  @media (min-aspect-ratio: 7/10) and (max-aspect-ratio: 9/10) {
+    .responsive-visual {
+      @apply w-[80vw] h-[80vw];
+    }
+    .overlapping-paragraph {
+      @apply text-[27vw];
+    }
+  }
+
+  @media (min-aspect-ratio: 9/10) and (max-aspect-ratio: 12/10) {
+    .responsive-visual {
+      @apply w-[80vw] h-[60vw];
+    }
+    .overlapping-paragraph {
+      @apply text-[18vw];
+    }
+  }
+
+  @media (min-aspect-ratio: 12/10) {
+    .responsive-visual {
+      @apply w-[70vw] h-[30vw];
+    }
+    .overlapping-paragraph {
+      @apply text-[10vw];
+    }
+}
 
   .overlapping-paragraph {
       position: absolute;

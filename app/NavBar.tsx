@@ -103,7 +103,7 @@ const NavBar = () => {
             {isMenuOpen && (
               <>
                 {isCartOpen && (setCartOpen(false), null)}
-                <div className="absolute w-full bg-white z-50">
+                <div className="absolute w-full bg-white z-50 max-h-[85vh] overflow-auto">
                   <NavMenu />
                 </div>
               </>
@@ -112,7 +112,7 @@ const NavBar = () => {
             {isCartOpen && (
               <>
                 {isMenuOpen && (setMenuOpen(false), null)}
-                <div className="absolute w-full bg-white p-3 z-50">
+                <div className="absolute w-full bg-white p-3 z-50 max-h-[85vh] overflow-auto">
                   <ShoppingCartMenu />
                 </div>
               </>
@@ -124,14 +124,14 @@ const NavBar = () => {
           <div className="relative grid grid-cols-3 w-full">
             <div className="col-start-1 col-end-1 relative">
               {isMenuOpen && (
-                <div className="absolute w-full top-0 left-0 z-50 bg-white shadow-lg">
+                <div className="absolute w-full top-0 left-0 z-50 bg-white shadow-lg max-h-[70vh] overflow-auto">
                   <NavMenu />
                 </div>
               )}
             </div>
             <div className="col-start-3 col-end-3 relative">
               {isCartOpen && (
-                <div className="absolute w-full top-0 right-0 z-50 bg-white shadow-lg p-2">
+                <div className="absolute w-full top-0 right-0 z-50 bg-white shadow-lg max-h-[70vh] overflow-auto p-2">
                   <ShoppingCartMenu />
                 </div>
               )}

@@ -1,22 +1,28 @@
-import React from "react";
-
 const AboutMeText = () => {
   return (
-    <div className="flex flex-col gap-y-3">
-      <h2 className="text-2xl font-bold">About Us</h2>
-      <p className="text-base w-[20rem] ">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam earum
-        aspernatur quae. Temporibus architecto ad aliquam ex. Vel mollitia
-        adipisci, deleniti inventore ut accusantium praesentium beatae, fuga hic
-        laudantium et! Minus perspiciatis quos modi nulla? Error saepe minus
-        necessitatibus blanditiis molestias excepturi exercitationem eos quis
-        vero ab! Sint, odit! Excepturi aspernatur, eligendi quam explicabo
-        possimus ut id odit velit porro, officia ducimus ad repudiandae quos
-        consequuntur? Quod beatae nulla atque, quis eaque assumenda ipsum.
-        Quisquam consequuntur in at aut! Maxime tempore consectetur consequuntur
-        dolorum ut fuga a quam? Itaque, ducimus. Asperiores atque nemo ex harum
-        magni odio possimus, voluptas provident.
-      </p>
+    <div className="flex flex-col gap-y-6 max-w-[40rem] p-6 mx-auto mt-8">
+      <h2 className="text-4xl font-bold border-gray-700 border-b-2 pb-1">About Us</h2>
+
+        {/* Quote Section */}
+        <div className="flex flex-col md:flex-row items-start p-6">
+          <span className="text-6xl text-gray-400 leading-tight mr-6">
+            “
+          </span>
+          <p className="paragraph-text text-lg md:text-xl leading-relaxed text-gray-700">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ex
+            natus temporibus vero exercitationem atque necessitatibus quos
+            ipsam, dicta praesentium doloribus pariatur nostrum rem quam qui
+            magnam facere ad maiores error. Officiis, fugit dolorem deserunt ab,
+            aliquam voluptate reprehenderit ullam eos quo voluptatum nihil! Et
+            at pariatur quibusdam assumenda perspiciatis id voluptas vitae
+            inventore, voluptates veritatis blanditiis facere, distinctio
+            recusandae cum quos! Incidunt, illum quia iste officiis quisquam
+            voluptate est, nostrum accusantium, nulla quasi ex inventore.
+            Consectetur facere assumenda, ex quam sequi quos doloribus non
+            perferendis harum laudantium est explicabo esse ad commodi fugiat
+            totam provident nulla cupiditate mollitia fugit.
+          </p>
+        </div>
     </div>
   );
 };

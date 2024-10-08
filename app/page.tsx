@@ -11,9 +11,14 @@ export default function Home() {
         <HomeVisual />
       </div>
       {/* Second part: about us */}
-      <div className="flex h-[100vh] justify-center border-black border-2">
+      <div className="flex flex-col justify-center">
         {/* About us content here */}
+        <div className="p-4">
         <AboutMeText />
+        </div>
+        <div>
+          My Pictures
+        </div>
       </div>
       {/* Third part: favorites */}
       <div className="flex justify-center items-center row-start-3 hidden">

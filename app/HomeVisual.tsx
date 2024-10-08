@@ -3,6 +3,14 @@
 const backgrounds = [
   "/assets/images/print1.jpeg",
   "/assets/images/print2.jpeg",
+  "/assets/images/print3.jpg",
+  "/assets/images/print4.jpg",
+  "/assets/images/print5.jpg",
+  "/assets/images/print6.jpg",
+  "/assets/images/print7.jpg",
+  "/assets/images/print8.jpg",
+  "/assets/images/print9.jpg",
+  "/assets/images/print10.jpg",
 ];
 
 import Button from "@/components/Button";
@@ -21,24 +29,6 @@ const HomeVisual = () => {
   };
 
   return (
-    // <div
-    //   className="w-full h-full flex gap-y-10 flex-col items-center justify-evenly text-center"
-    //   onClick={handleMouseClick}
-    // >
-    //   <p
-    //     className="chalet_comprimé cursor-default text-wrap drop-shadow-2xl home-text text-[32vw] md:text-[26vw] lg:text-[15vw] leading-tight"
-    //     style={{
-    //       backgroundImage: `url(${backgroundImage})`,
-    //     }}
-    //   >
-    //     Vintage
-    //     Archive
-    //     Jungle
-    //   </p>
-    //   <Link href={"/"} className="flex items-center">
-    //     <Button text={"Shop Now"} className={"md:text-2xl lg:text-2xl"}/>
-    //   </Link>
-    // </div>
     <div className="h-full flex flex-col  justify-around items-center relative overflow-hidden">
       <div
         className="responsive-paragraph chalet-comprimé cursor-default responsive-visual relative"
@@ -47,7 +37,7 @@ const HomeVisual = () => {
         <p
           className="overlapping-paragraph p-8 home-background"
           style={{
-            backgroundImage: `url(${backgroundImage})`
+            backgroundImage: `url(${backgroundImage})`,
           }}
         >
           Vintage Archive Jungle
