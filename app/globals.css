@@ -106,7 +106,7 @@
     .overlapping-paragraph {
       @apply text-[10vw];
     }
-}
+  }
 
   .overlapping-paragraph {
       position: absolute;
@@ -116,5 +116,17 @@
       text-align: center;
       z-index: 1;
   }
+
+  /* Fade-in and out transitions between pictures */
+  .fade-in {
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+  }
+  
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+  }
+  
 }
 

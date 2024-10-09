@@ -21,7 +21,6 @@ const ShoppingCartMenu = () => {
     { title: "Leather boots", price: 78.0, src: img4 },
   ];
 
-  // Calculate the total price of the articles
   const totalPrice = articles.reduce((sum, article) => sum + article.price, 0);
 
   if (articles.length === 0) {

@@ -1,6 +1,7 @@
 import HomeVisual from "@/app/HomeVisual";
 import NavBar from "@/app/NavBar";
 import AboutMeText from "@/app/AboutMeText";
+import AboutMePictures from "./AboutMePictures";
 
 export default function Home() {
   return (
@@ -11,13 +12,13 @@ export default function Home() {
         <HomeVisual />
       </div>
       {/* Second part: about us */}
-      <div className="flex flex-col justify-center">
+      <div className="flex flex-col lg:flex-row justify-center">
         {/* About us content here */}
-        <div className="p-4">
-        <AboutMeText />
+        <div className="p-4 lg:w-1/2">
+          <AboutMeText />
         </div>
-        <div>
-          My Pictures
+        <div className="relative py-4 px-10 flex justify-center lg:w-1/2">
+          <AboutMePictures />
         </div>
       </div>
       {/* Third part: favorites */}
