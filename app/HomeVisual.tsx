@@ -1,5 +1,9 @@
 "use client";
 
+import { useState, useEffect } from "react";
+import Button from "@/components/Button";
+import Link from "next/link";
+
 const backgrounds = [
   "/assets/images/print1.jpeg",
   "/assets/images/print2.jpeg",
@@ -13,14 +17,14 @@ const backgrounds = [
   "/assets/images/print10.jpg",
 ];
 
-import Button from "@/components/Button";
-import Link from "next/link";
-import React, { useState } from "react";
-
 const HomeVisual = () => {
-  const [backgroundImage, setBackgroundImage] = useState(
-    backgrounds[Math.floor(Math.random() * backgrounds.length)]
-  );
+  const [backgroundImage, setBackgroundImage] = useState("");
+
+  useEffect(() => {
+    setBackgroundImage(
+      backgrounds[Math.floor(Math.random() * backgrounds.length)]
+    );
+  }, [backgroundImage]);
 
   const handleMouseClick = () => {
     setBackgroundImage(
@@ -29,7 +33,7 @@ const HomeVisual = () => {
   };
 
   return (
-    <div className="h-full flex flex-col  justify-around items-center relative overflow-hidden">
+    <div className="h-full flex flex-col justify-around items-center relative overflow-hidden">
       <div
         className="responsive-paragraph chalet-comprimé cursor-default responsive-visual relative"
         onClick={handleMouseClick}

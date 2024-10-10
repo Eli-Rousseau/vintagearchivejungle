@@ -1,11 +1,12 @@
 import HomeVisual from "@/app/HomeVisual";
 import NavBar from "@/app/NavBar";
 import AboutMeText from "@/app/AboutMeText";
-import AboutMePictures from "./AboutMePictures";
+import AboutMePictures from "@/app/AboutMePictures";
+import FavoriteArticles from "@/app/FavoriteArticles";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-auto gap-4">
+    <div className="grid grid-rows-auto gap-10">
       {/* First part: navbar and home screen visual */}
       <div className="flex flex-col h-screen">
         <NavBar />
@@ -22,9 +23,9 @@ export default function Home() {
         </div>
       </div>
       {/* Third part: favorites */}
-      <div className="flex justify-center items-center row-start-3 hidden">
+      <div className="p-4">
         {/* Favorites content here */}
-        <p></p>
+        <FavoriteArticles />
       </div>
     </div>
   );

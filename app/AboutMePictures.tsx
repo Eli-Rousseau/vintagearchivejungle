@@ -22,8 +22,8 @@ const AboutMePictures = () => {
           prevIndex === pictures.length - 1 ? 0 : prevIndex + 1
         );
         setFadeClass("fade-in");
-      }, 100); // Should match the fade out transition time: 100 miliseconds
-    }, 5000); // Change image every: 5 seconds
+      }, 200); // Should match the fade out transition time: 100 miliseconds
+    }, 7000); // Change image every: 7 seconds
 
     return () => clearInterval(interval);
   }, [pictures.length]);

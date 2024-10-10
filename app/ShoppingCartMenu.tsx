@@ -69,8 +69,8 @@ const ShoppingCartMenu = () => {
                 <span>{article.title}</span>
               </div>
               <div>
-                <span>Price: </span>
-                <span>{`€ ${article.price.toFixed(2)}`}</span>
+                <span>Price:</span>
+                <span className="ml-1">{`€ ${article.price.toFixed(2)}`}</span>
               </div>
             </div>
             {/* Close button */}
@@ -84,7 +84,7 @@ const ShoppingCartMenu = () => {
       {/* Summary section */}
       <div className="flex items-center my-3 text-base">
         <span>Total price: </span>
-        <span>{`€ ${totalPrice.toFixed(2)}`}</span>
+        <span className="ml-1">{`€ ${totalPrice.toFixed(2)}`}</span>
       </div>
       <div>
         <Button text="Checkout" />
