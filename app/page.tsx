@@ -3,6 +3,7 @@ import NavBar from "@/app/NavBar";
 import AboutMeText from "@/app/AboutMeText";
 import AboutMePictures from "@/app/AboutMePictures";
 import FavoriteArticles from "@/app/FavoriteArticles";
+import Footer from "@/app/Footer";
 
 export default function Home() {
   return (
@@ -14,7 +15,6 @@ export default function Home() {
       </div>
       {/* Second part: about us */}
       <div className="flex flex-col lg:flex-row justify-center">
-        {/* About us content here */}
         <div className="p-4 lg:w-1/2">
           <AboutMeText />
         </div>
@@ -24,8 +24,11 @@ export default function Home() {
       </div>
       {/* Third part: favorites */}
       <div className="p-4">
-        {/* Favorites content here */}
         <FavoriteArticles />
+      </div>
+      {/* Fourth part: footer */}
+      <div className="flex justify-center w-full p-4 bg-black">
+        <Footer />
       </div>
     </div>
   );

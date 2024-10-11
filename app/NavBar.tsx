@@ -56,7 +56,7 @@ const NavBar = () => {
           title="Home"
           className={`${bevan.className} text-xl md:text-3xl max-w-[150px] flex text-center justify-self-center md:scale-110 hover:cursor-pointer`}
         >
-          <Link href="/">
+          <Link href="/" className="relative">
             <p>Vintage Archive Jungle</p>
           </Link>
         </div>

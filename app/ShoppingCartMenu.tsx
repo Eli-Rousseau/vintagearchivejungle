@@ -51,7 +51,7 @@ const ShoppingCartMenu = () => {
         {articles.map((article, index) => (
           <div key={index} className="flex mb-4 items-center">
             {/* Image of article with loader */}
-            <div className="w-[80px] h-[100px] flex-shrink-0 relative overflow-hidden flex items-center justify-center">
+            <div className="w-[80px] h-[100px] -flex-shrink-0 relative overflow-hidden flex items-center justify-center">
               {loading && <Loader />}
               <Image
                 src={article.src}
