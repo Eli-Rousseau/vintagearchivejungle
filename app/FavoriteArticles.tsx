@@ -17,6 +17,7 @@ const FavoriteArticles = () => {
       src: article1,
       sale: 0,
       liked: false,
+      link: "/"
     },
     {
       identifier: 2,
@@ -25,6 +26,7 @@ const FavoriteArticles = () => {
       src: article2,
       sale: 20,
       liked: false,
+      link: "/"
     },
     {
       identifier: 3,
@@ -33,6 +35,7 @@ const FavoriteArticles = () => {
       src: article3,
       sale: 0,
       liked: true,
+      link: "/"
     },
     {
       identifier: 4,
@@ -41,6 +44,7 @@ const FavoriteArticles = () => {
       src: article4,
       sale: 0,
       liked: false,
+      link: "/"
     },
   ];
 
@@ -74,17 +78,20 @@ const FavoriteArticles = () => {
   };
 
   useEffect(() => {
-    // Check the scroll position on component mount
     handleScroll();
   }, []);
 
   return (
-    <div className="flex flex-col gap-y-10">
+    <div className="flex flex-col gap-y-14 my-32">
+
+      {/* Title of section*/}
       <div className="flex w-full justify-center lg:w-1/2 px-6">
         <h2 className="text-4xl font-bold border-gray-700 border-b-2 pb-1 flex-grow max-w-[37rem] lg:mr-4">
           Our Favorites
         </h2>
       </div>
+
+      {/* Slider of favorite products */}
       <div className="relative w-full">
         {/* Left Chevron */}
         {showLeftChevron && (
@@ -99,15 +106,15 @@ const FavoriteArticles = () => {
         <div
           id="slider"
           ref={sliderRef}
-          className="flex w-full overflow-x-scroll justify-around scroll-smooth scrollbar-hide snap-x snap-mandatory"
-          onScroll={handleScroll} // Attach scroll event
+          className="flex w-full overflow-x-scroll scrollbar-hide justify-around scroll-smooth snap-x snap-mandatory"
+          onScroll={handleScroll}
         >
           {articles.map((article) => (
             <div
-              className="w-full flex-shrink-0 flex max-w-[25rem] justify-center cursor-default hover:scale-[102%] ease-in-out duration-300 snap-center article-card"
+              className="w-full flex-shrink-0 flex max-w-[25rem] justify-center cursor-default snap-center article-card"
               key={article.identifier}
             >
-              <div className="w-[80%] my-3">
+              <div className="w-[80%] my-3 hover:scale-[102%] ease-in-out duration-300">
                 <ArticleCard article={article} />
               </div>
             </div>

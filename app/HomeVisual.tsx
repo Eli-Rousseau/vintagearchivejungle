@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Button from "@/components/Button";
 import Link from "next/link";
+import Loader from "@/components/Loader";
 
 const backgrounds = [
   "/assets/images/print1.jpeg",
@@ -19,17 +20,28 @@ const backgrounds = [
 
 const HomeVisual = () => {
   const [backgroundImage, setBackgroundImage] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  const loadImage = (imageSrc: string) => {
+    const img = new Image();
+    img.src = imageSrc;
+    img.onload = () => {
+      setLoading(false);
+    };
+  };
 
   useEffect(() => {
-    setBackgroundImage(
-      backgrounds[Math.floor(Math.random() * backgrounds.length)]
-    );
-  }, [backgroundImage]);
+    const randomImage = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    setBackgroundImage(randomImage);
+    setLoading(true);
+    loadImage(randomImage);
+  }, []);
 
   const handleMouseClick = () => {
-    setBackgroundImage(
-      backgrounds[Math.floor(Math.random() * backgrounds.length)]
-    );
+    const randomImage = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    setBackgroundImage(randomImage);
+    setLoading(true);
+    loadImage(randomImage);
   };
 
   return (
@@ -38,10 +50,17 @@ const HomeVisual = () => {
         className="responsive-paragraph chalet-comprimé cursor-default responsive-visual relative"
         onClick={handleMouseClick}
       >
+        {loading && (
+          <div className="absolute w-full h-full flex justify-center items-center">
+            <Loader />
+          </div>
+        )}
         <p
           className="overlapping-paragraph p-8 home-background"
           style={{
             backgroundImage: `url(${backgroundImage})`,
+            opacity: loading ? 0 : 1,
+            transition: "opacity 0.2s ease-in-out",
           }}
         >
           Vintage Archive Jungle
